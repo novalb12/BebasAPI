@@ -17,9 +17,7 @@ Route::group(['prefix' => 'v1'], function () {
     Route::post('/register', 'API\UserController@register');
     Route::get('/logout', 'API\UserController@logout')->middleware('auth:api');
     Route::post('/changepassword','API\UserController@changePassword')->middleware('auth:api');
-    Route::get('/tes',function(){
-        return response()->json(['angka' => '1'], 'sukses');
-    });
+    Route::get('/tes','API\UserController@tes');
 });
 Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'API\UserController@details');

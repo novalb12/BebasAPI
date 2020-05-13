@@ -113,5 +113,9 @@ class UserController extends Controller
         $user = Auth::user();
         return response()->json(['success' => $user], $this->successStatus);
     }
+    public function tes()
+    {
+        return response()->json(['angka' => '1']);
+    }
 
 }
